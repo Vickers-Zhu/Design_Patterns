@@ -1,0 +1,7 @@
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\PictureProduction\bin\Debug\PictureProduction.exe.config
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\PictureProduction\bin\Debug\PictureProduction.exe
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\PictureProduction\bin\Debug\PictureProduction.pdb
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\PictureProduction\obj\Debug\PictureProduction.csprojAssemblyReference.cache
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\PictureProduction\obj\Debug\PictureProduction.csproj.CoreCompileInputs.cache
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\PictureProduction\obj\Debug\PictureProduction.exe
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\PictureProduction\obj\Debug\PictureProduction.pdb
