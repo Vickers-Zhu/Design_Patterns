@@ -1,0 +1,14 @@
+C:\Users\VickersZhu\Documents\GitHub\Vitual_Factory_Pattern\Vitual_Factory_Pattern\bin\Debug\Vitual_Factory_Pattern.exe.config
+C:\Users\VickersZhu\Documents\GitHub\Vitual_Factory_Pattern\Vitual_Factory_Pattern\bin\Debug\Vitual_Factory_Pattern.exe
+C:\Users\VickersZhu\Documents\GitHub\Vitual_Factory_Pattern\Vitual_Factory_Pattern\bin\Debug\Vitual_Factory_Pattern.pdb
+C:\Users\VickersZhu\Documents\GitHub\Vitual_Factory_Pattern\Vitual_Factory_Pattern\obj\Debug\Vitual_Factory_Pattern.csprojAssemblyReference.cache
+C:\Users\VickersZhu\Documents\GitHub\Vitual_Factory_Pattern\Vitual_Factory_Pattern\obj\Debug\Vitual_Factory_Pattern.csproj.CoreCompileInputs.cache
+C:\Users\VickersZhu\Documents\GitHub\Vitual_Factory_Pattern\Vitual_Factory_Pattern\obj\Debug\Vitual_Factory_Pattern.exe
+C:\Users\VickersZhu\Documents\GitHub\Vitual_Factory_Pattern\Vitual_Factory_Pattern\obj\Debug\Vitual_Factory_Pattern.pdb
+C:\Users\VickersZhu\Documents\GitHub\Vitual_Factory_Pattern-master\Vitual_Factory_Pattern\bin\Debug\Vitual_Factory_Pattern.exe.config
+C:\Users\VickersZhu\Documents\GitHub\Vitual_Factory_Pattern-master\Vitual_Factory_Pattern\bin\Debug\Vitual_Factory_Pattern.exe
+C:\Users\VickersZhu\Documents\GitHub\Vitual_Factory_Pattern-master\Vitual_Factory_Pattern\bin\Debug\Vitual_Factory_Pattern.pdb
+C:\Users\VickersZhu\Documents\GitHub\Vitual_Factory_Pattern-master\Vitual_Factory_Pattern\obj\Debug\Vitual_Factory_Pattern.csprojAssemblyReference.cache
+C:\Users\VickersZhu\Documents\GitHub\Vitual_Factory_Pattern-master\Vitual_Factory_Pattern\obj\Debug\Vitual_Factory_Pattern.csproj.CoreCompileInputs.cache
+C:\Users\VickersZhu\Documents\GitHub\Vitual_Factory_Pattern-master\Vitual_Factory_Pattern\obj\Debug\Vitual_Factory_Pattern.exe
+C:\Users\VickersZhu\Documents\GitHub\Vitual_Factory_Pattern-master\Vitual_Factory_Pattern\obj\Debug\Vitual_Factory_Pattern.pdb
