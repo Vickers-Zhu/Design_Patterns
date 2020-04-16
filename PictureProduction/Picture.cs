@@ -47,73 +47,32 @@ namespace PictureProduction
         public void Print()
         {
             switch (mode)
-            {
+            { 
                 case 1:
-                    Console.Write(LeftFrame);
-                    Console.Write(LeftFrame);
-                    Console.Write(Color);
-                    Console.Write(RightFrame);
-                    Console.Write(RightFrame);
-                    Console.Write(" " + Text + " ");
-                    Console.Write(LeftFrame);
-                    Console.Write(LeftFrame);
-                    Console.Write(Color);
-                    Console.Write(RightFrame);
-                    Console.Write(RightFrame);
-                    Console.WriteLine();
+                    string picture = new string(LeftFrame.ToCharArray()[0], 2) +
+                        Color + new string(RightFrame.ToCharArray()[0], 2);
+                    picture = picture + " " + Text + " " + picture;
+                    Console.WriteLine(picture);
                     break;
                 case 2:
                     TestOperation();
                     if (Color == "" ^ operation == "spacing")
                     {
-                        Console.Write(LeftFrame);
-                        Console.Write(LeftFrame);
-                        Console.Write(Color);
-                        Console.Write(RightFrame);
-                        Console.Write(RightFrame);
+                        picture = new string(LeftFrame.ToCharArray()[0], 2) +
+                            Color + new string(RightFrame.ToCharArray()[0], 2);
                     }
                     else if (Color == "" && operation == "spacing")
                     {
-                        Console.Write(LeftFrame);
-                        Console.Write(LeftFrame);
-                        Console.Write(LeftFrame);
-                        Console.Write(Color);
-                        Console.Write(RightFrame);
-                        Console.Write(RightFrame);
-                        Console.Write(RightFrame);
+                        picture = new string(LeftFrame.ToCharArray()[0], 3) +
+                            Color + new string(RightFrame.ToCharArray()[0], 3);
                     }
                     else
                     {
-                        Console.Write(LeftFrame);
-                        Console.Write(Color);
-                        Console.Write(RightFrame);
+                        picture = new string(LeftFrame.ToCharArray()[0], 1) +
+                            Color + new string(RightFrame.ToCharArray()[0], 1);
                     }
-                    Console.Write(" " + Text + " ");
-                    if (Color == "" ^ operation == "spacing")
-                    {
-                        Console.Write(LeftFrame);
-                        Console.Write(LeftFrame);
-                        Console.Write(Color);
-                        Console.Write(RightFrame);
-                        Console.Write(RightFrame);
-                    }
-                    else if (Color == "" && operation == "spacing")
-                    {
-                        Console.Write(LeftFrame);
-                        Console.Write(LeftFrame);
-                        Console.Write(LeftFrame);
-                        Console.Write(Color);
-                        Console.Write(RightFrame);
-                        Console.Write(RightFrame);
-                        Console.Write(RightFrame);
-                    }
-                    else
-                    {
-                        Console.Write(LeftFrame);
-                        Console.Write(Color);
-                        Console.Write(RightFrame);
-                    }
-                    Console.WriteLine();
+                    picture = picture + " " + Text + " " + picture;
+                    Console.WriteLine(picture);
                     break;
             }
         }

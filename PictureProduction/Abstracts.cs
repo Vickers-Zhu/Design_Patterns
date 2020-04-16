@@ -9,6 +9,36 @@ namespace PictureProduction
         void SetNextChain(IMachine machine);
     }
 
+    class Validation : IMachine
+    {
+        private IMachine nextMachine;
+
+        private int mode;
+
+        public Validation(int mode)
+        {
+            this.mode = mode;
+        }
+
+        public void Handle(Order order, IPicture picture)
+        {
+            if (order.Shape != null && order.Color != null && order.Text != null && order.Operation != null &&
+                order.Shape != "" && order.Color != "" && order.Text != "" && order.Operation != "" &&
+                Regex.IsMatch(order.Shape, @"^[a-zA-Z]+$") &&
+                Regex.IsMatch(order.Color, @"^[a-zA-Z]+$") &&
+                Regex.IsMatch(order.Text, @"^[a-zA-Z]+$") &&
+                Regex.IsMatch(order.Operation, @"^[a-zA-Z]+$"))
+                nextMachine.Handle(order, picture);
+            else
+                Console.WriteLine("Error: Invalid order!");
+        }
+
+        public void SetNextChain(IMachine machine)
+        {
+            this.nextMachine = machine;
+        }
+    }
+
     class Painting : IMachine
     {
         private IMachine nextMachine;
@@ -112,7 +142,7 @@ namespace PictureProduction
                         Console.WriteLine("Error: Cannot create picture!");
                         return;
                     }
-                    new Picture(shape, picture.Color, picture.Text, mode).Print();
+                    nextMachine.Handle(order, new Picture(shape, picture.Color, picture.Text, mode));
                     break;
                 case 2:
                     shape = null;
@@ -132,9 +162,29 @@ namespace PictureProduction
                         Console.WriteLine("Error: Cannot create picture!");
                         return;
                     }
-                    new Picture(shape, picture.Color, picture.Text, mode).Print();
+                    nextMachine.Handle(order, new Picture(shape, picture.Color, picture.Text, mode));
                     break;
             }
+        }
+
+        public void SetNextChain(IMachine machine)
+        {
+            this.nextMachine = machine;
+        }
+    }
+
+    class Print : IMachine
+    {
+        IMachine nextMachine;
+        private int mode;
+        public Print(int mode)
+        {
+            this.mode = mode;
+        }
+
+        public void Handle(Order order, IPicture picture)
+        {
+            picture.Print();
         }
 
         public void SetNextChain(IMachine machine)

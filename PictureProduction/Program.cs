@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace PictureProduction
 {
@@ -23,25 +24,24 @@ namespace PictureProduction
             new Order("star", "1234", "ChainIsBeauty", "uppercase"), //invalid order
             new Order("star", "green", null, "uppercase"), //invalid order
         };
-        
+
         static void ProducePictures(IEnumerable<Order> orders, int mode)
         {
             IPicture picture = new Picture(null, null, null, mode);
 
-            IMachine operation1 = new Painting(mode);
-            IMachine operation2 = new Signing(mode);
-            IMachine operation3 = new Framing(mode);
+            IMachine operation1 = new Validation(mode);
+            IMachine operation2 = new Painting(mode);
+            IMachine operation3 = new Signing(mode);
+            IMachine operation4 = new Framing(mode);
+            IMachine operation5 = new Print(mode);
 
             operation1.SetNextChain(operation2);
             operation2.SetNextChain(operation3);
+            operation3.SetNextChain(operation4);
+            operation4.SetNextChain(operation5);
 
-            foreach(Order order in orders)
-            {
-                if (order.Validate())
-                    operation1.Handle(order, picture);
-                else
-                    Console.WriteLine("Error: Invalid order!");         
-            }          
+            foreach (Order order in orders)
+                operation1.Handle(order, picture);             
         }
 
         static void Main(string[] args)
