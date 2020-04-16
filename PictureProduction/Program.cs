@@ -24,19 +24,37 @@ namespace PictureProduction
             new Order("star", "green", null, "uppercase"), //invalid order
         };
         
-        static void ProducePictures(IEnumerable<Order> orders)
+        static void ProducePictures(IEnumerable<Order> orders, int mode)
         {
+            IPicture picture = new Picture(null, null, null, mode);
+
+            IMachine operation1 = new Painting(mode);
+            IMachine operation2 = new Signing(mode);
+            IMachine operation3 = new Framing(mode);
+
+            operation1.SetNextChain(operation2);
+            operation2.SetNextChain(operation3);
+
+            foreach(Order order in orders)
+            {
+                if (order.Validate())
+                    operation1.Handle(order, picture);
+                else
+                    Console.WriteLine("Error: Invalid order!");         
+            }          
         }
 
         static void Main(string[] args)
         {
             Console.WriteLine("--- Simple Production Line ---");
-            ProducePictures(orders);
+            ProducePictures(orders, 1);
 
             Console.WriteLine();
 
             Console.WriteLine("--- Complex Production Line ---");
-            ProducePictures(orders);
+            ProducePictures(orders, 2);
+
+            Console.ReadLine();
         }
     }
 }
