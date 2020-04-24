@@ -1,0 +1,14 @@
+C:\Users\VickersZhu\source\repos\DataFrames\DataFrames\bin\Debug\DataFrames.exe.config
+C:\Users\VickersZhu\source\repos\DataFrames\DataFrames\bin\Debug\DataFrames.exe
+C:\Users\VickersZhu\source\repos\DataFrames\DataFrames\bin\Debug\DataFrames.pdb
+C:\Users\VickersZhu\source\repos\DataFrames\DataFrames\obj\Debug\DataFrames.csprojAssemblyReference.cache
+C:\Users\VickersZhu\source\repos\DataFrames\DataFrames\obj\Debug\DataFrames.csproj.CoreCompileInputs.cache
+C:\Users\VickersZhu\source\repos\DataFrames\DataFrames\obj\Debug\DataFrames.exe
+C:\Users\VickersZhu\source\repos\DataFrames\DataFrames\obj\Debug\DataFrames.pdb
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\DataFrames\bin\Debug\DataFrames.exe.config
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\DataFrames\bin\Debug\DataFrames.exe
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\DataFrames\bin\Debug\DataFrames.pdb
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\DataFrames\obj\Debug\DataFrames.csprojAssemblyReference.cache
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\DataFrames\obj\Debug\DataFrames.csproj.CoreCompileInputs.cache
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\DataFrames\obj\Debug\DataFrames.exe
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\DataFrames\obj\Debug\DataFrames.pdb
