@@ -13,6 +13,13 @@ namespace TravelAgencies.Advertiser
         protected List<TripPerDay> trips;
         string Country { get; set; }
 
+        private int? times;
+
+        public Graphic(int? times)
+        {
+            this.times = times;
+        }
+
         public void getting(Agency agency)
         {
             (photos, trips) = agency.GetPtAds();
@@ -21,6 +28,11 @@ namespace TravelAgencies.Advertiser
 
         public void posting()
         {
+            if (this.times != null)
+            {
+                if (this.times <= 0) return;
+                this.times--;
+            }
             PostGraph();
         }
       

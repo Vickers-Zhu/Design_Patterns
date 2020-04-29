@@ -132,6 +132,7 @@ namespace TravelAgencies.DataAccess
                                             Handle(new Numb(photosData.Photos[i][j][k].WidthPx), 2).Number;
                                         string HeightPx = TakingElement.photoDecrypter.
                                             Handle(new Numb(photosData.Photos[i][j][k].HeightPx), 2).Number;
+                                        if (double.Parse(WidthPx) == 0.0 || double.Parse(HeightPx) == 0.0) continue;
                                         return new Photo(photosData.Photos[i][j][k].Name,
                                             photosData.Photos[i][j][k].Camera,
                                             photosData.Photos[i][j][k].CameraSettings,

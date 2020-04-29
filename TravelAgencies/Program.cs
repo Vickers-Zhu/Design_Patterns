@@ -33,41 +33,36 @@ namespace TravelAgencies
 				OysterDatabase reviewData
 			) = Init.Init.Run();
 
-
             //----------
             //YOUR CODE - set up everything
             TakingElement taker = new TakingElement(accomodationData, tripsData, photosData, reviewData);
-            Agency pl = new AgencyPL(new FactoryPL(taker), new Random(10010));
-            Agency fr = new AgencyFR(new FactoryFR(taker), new Random(10086));
-            Agency it = new AgencyIT(new FactoryIT(taker), new Random(12315));
-
-            OfferWebsite offerWebsite = new OfferWebsite();
+            Agency pl = new AgencyPL(new FactoryPL(taker), new Random(rd.Next(1, 10086)));
+            Agency fr = new AgencyFR(new FactoryFR(taker), new Random(rd.Next(1, 10086)));
+            Agency it = new AgencyIT(new FactoryIT(taker), new Random(rd.Next(1, 10086)));
+            OfferWebsite offerWebsite = new OfferWebsite(WebsiteTemporaryOfferCount, WebsitePermanentOfferCount);
             offerWebsite.AddAgc(pl);
             offerWebsite.AddAgc(fr);
             offerWebsite.AddAgc(it);
-            offerWebsite.Present();
-
+            offerWebsite.AddOffers();
             //----------
 
-            //        while (true)
-            //        {
-            //Console.Clear();
+            while (true)
+            {
+                Console.Clear();
+                //----------
+                //YOUR CODE - run
+                //----------
 
-            //----------
-            //YOUR CODE - run
-            //----------
+                //uncomment
+                Console.WriteLine("\n\n=======================FIRST PRESENT======================");
+                offerWebsite.Present();
+                Console.WriteLine("\n\n=======================SECOND PRESENT======================");
+                offerWebsite.Present();
+                Console.WriteLine("\n\n=======================THIRD PRESENT======================");
+                offerWebsite.Present();
 
-            //uncomment
-            // Console.WriteLine("\n\n=======================FIRST PRESENT======================");
-            // offerWebsite.Present();
-            // Console.WriteLine("\n\n=======================SECOND PRESENT======================");
-            // offerWebsite.Present();
-            // Console.WriteLine("\n\n=======================THIRD PRESENT======================");
-            // offerWebsite.Present();
-
-
-            //if (HandleInput()) break;
-            //}
+                if (HandleInput()) break;
+            }
             Console.ReadLine();
 		}
 		bool HandleInput()

@@ -16,6 +16,13 @@ namespace TravelAgencies.Advertiser
         double AverRating;
         double SumPrice;
 
+        private int? times;
+
+        public Text(int? times)
+        {
+            this.times = times;
+        }
+
         public void getting(Agency agency)
         {
             (reviews, trips, AverRating, SumPrice) = agency.GetTxAds();
@@ -24,7 +31,17 @@ namespace TravelAgencies.Advertiser
 
         public void posting()
         {
-            PostText();
+            if (this.times != null)
+            {
+                if (this.times <= 0)
+                {
+                    Console.WriteLine("This offer is expired");
+                    Console.WriteLine();
+                    return;
+                } 
+                this.times--;
+            }
+            PostText();                
         }
 
         private void PostText()
@@ -45,6 +62,34 @@ namespace TravelAgencies.Advertiser
                 Console.WriteLine($"        {day.trip1.Names}");
                 Console.WriteLine($"        {day.trip2.Names}");
                 Console.WriteLine($"        {day.trip3.Names}");
+            }
+            Console.WriteLine();
+            foreach (RevieW review in reviews)
+            {
+                switch (Country)
+                {
+                    case "Poland":
+                        Console.Write($"{review.UserName.Replace('e', 'ę').Replace('a', 'ą')}: ");
+                        Console.WriteLine($"{review.Review.Replace('e', 'ę').Replace('a', 'ą')}.");
+                        break;
+                    case "Italy":
+                        Console.Write($"Dello_{review.UserName}: ");
+                        Console.WriteLine($"{review.Review}.");
+                        break;
+                    case "France":
+                        string[] words = review.Review.Split(' ');
+                        string newRw = "";
+                        foreach (string wd in words)
+                        {
+                            string la = "la";
+                            if (wd.Length >= 4) la = wd;
+                            newRw += la + " ";
+                        }
+                        newRw = newRw.Trim();
+                        Console.Write($"{review.UserName}: ");
+                        Console.WriteLine($"{newRw}.");
+                        break;
+                }
             }
             Console.WriteLine();
         }

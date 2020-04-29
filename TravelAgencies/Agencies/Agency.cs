@@ -15,12 +15,14 @@ namespace TravelAgencies.Agencies
         protected List<TripPerDay> trips;
         protected int days;
         public abstract string Country { get; }
+        public AgencyFactory factory { get; }
 
         public abstract void Accept(IAds ads);
 
         public Agency(AgencyFactory factory, Random r)
         {
             Overdue(factory, r);
+            this.factory = factory;
         }
 
         public void Overdue(AgencyFactory factory, Random r)
@@ -29,7 +31,7 @@ namespace TravelAgencies.Agencies
             reviews = new List<RevieW>();
             trips = new List<TripPerDay>();
 
-            this.days = r.Next(1, 4);
+            this.days = r.Next(1, 5);
             for (int i = 0; i < this.days; i++)
             {
                 Trip trip1 = null;
@@ -37,12 +39,14 @@ namespace TravelAgencies.Agencies
                 Trip trip3 = null;
                 Booking booking = null;
                 Photo photo = null;
+                RevieW review = null;
                 while (trip1 == null) trip1 = factory.CreateTrip().Trip;
                 while (trip2 == null) trip2 = factory.CreateTrip().Trip;
                 while (trip3 == null) trip3 = factory.CreateTrip().Trip;
                 while (booking == null) booking = factory.CreateBooking();
                 trips.Add(new TripPerDay(trip1, trip2, trip3, booking));
-
+                while (review == null) review = factory.CreateReview().Review;
+                reviews.Add(review);
                 while (photo == null) photo = factory.CreatePhoto().Photo;
                 photos.Add(photo);
             }
