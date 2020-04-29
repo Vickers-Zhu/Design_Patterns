@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TravelAgencies.Encryption;
 
 namespace TravelAgencies.DataAccess
 {
@@ -16,7 +17,7 @@ namespace TravelAgencies.DataAccess
 		public string HeightPx { get; set; }//Encrypted
 		public double Longitude { get; set; }
 		public double Latitude { get; set; }
-	}
+    }
 	class ShutterStockDatabase 
 	{
 		public PhotMetadata[][][] Photos;

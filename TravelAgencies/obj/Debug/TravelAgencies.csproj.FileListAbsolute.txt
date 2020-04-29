@@ -1,2 +1,7 @@
 C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\TravelAgencies\obj\Debug\TravelAgencies.csprojAssemblyReference.cache
 C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\TravelAgencies\obj\Debug\TravelAgencies.csproj.CoreCompileInputs.cache
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\TravelAgencies\bin\Debug\TravelAgencies.exe.config
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\TravelAgencies\bin\Debug\TravelAgencies.exe
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\TravelAgencies\bin\Debug\TravelAgencies.pdb
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\TravelAgencies\obj\Debug\TravelAgencies.exe
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\TravelAgencies\obj\Debug\TravelAgencies.pdb
