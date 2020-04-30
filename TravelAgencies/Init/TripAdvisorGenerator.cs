@@ -25,8 +25,8 @@ namespace TravelAgencies.Init
 			{
 				Guid guid = Guid.NewGuid();
 				result.Ids[i] = guid;
-				result.Names[R.Next(result.Names.Length)][guid] = DBGeneratorUtils.AnyFromArray(R, tripAdvisorNames);
-				result.Prices[guid] = valuesMap[(R.Next(1, 80) * 5)];
+                result.Names[R.Next(result.Names.Length)][guid] = DBGeneratorUtils.AnyFromArray(R, tripAdvisorNames);
+                result.Prices[guid] = valuesMap[(R.Next(1, 80) * 5)];
 				result.Ratings[guid] = valuesMap[R.Next(1, 6)];
 				result.Countries[guid] = tripAdvisorCountries[R.Next(0, tripAdvisorCountries.Length * 2 - 1) / 2];
 			}

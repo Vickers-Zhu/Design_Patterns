@@ -26,12 +26,12 @@ namespace TravelAgencies.Init
 					{
 						if (R.NextDouble() < emptyChance) continue;
 						result.Photos[i][j][k] = GeneratePhotoData(R);
-						if (--toGenerateLeft == 0)
-							return result;
+                        if (--toGenerateLeft == 0)
+                            return result;					
 					}
 				}
 			}
-			return result;
+            return result;
 		}
 
 		private static PhotMetadata GeneratePhotoData(Random R)

@@ -12,7 +12,9 @@ namespace TravelAgencies.Agencies
     class AgencyFR : Agency
     {
         public override string Country => "France";
-        public AgencyFR(AgencyFactory factory, Random r) : base(factory, r) { }
+        public AgencyFR(AgencyFactory factory, Random r) : base(factory, r)
+        {
+        }
 
         public override void Accept(IAds ads)
         {

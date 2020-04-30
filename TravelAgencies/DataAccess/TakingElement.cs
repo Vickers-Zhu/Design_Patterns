@@ -19,20 +19,6 @@ namespace TravelAgencies.DataAccess
         static public IDecrypt photoDecrypter;
         static public IDecrypt tripDecrypter;
 
-        static int i = 0;
-        static int j = 0;
-        static int k = 0;
-
-        static int m = 0;
-
-        static int c = 0;
-        static int r = 0;
-        static ListNode nodeB;
-        static bool isGenerated = false;
-
-        static BSTNode node;
-        static Stack<BSTNode> stack = new Stack<BSTNode>();
-
         public TakingElement(BookingDatabase accomodationData,
                 TripAdvisorDatabase tripsData,
                 ShutterStockDatabase photosData,
@@ -43,10 +29,6 @@ namespace TravelAgencies.DataAccess
             this.photosData = photosData;
             this.reviewData = reviewData;
 
-            if(node == null)
-                node = reviewData.Reviews;
-            if (nodeB == null)
-                nodeB = accomodationData.Rooms[0];
             if (bookDecrypter == null || photoDecrypter == null || tripDecrypter == null)
                 SetDecrypter();
         }
@@ -92,23 +74,10 @@ namespace TravelAgencies.DataAccess
         {
             while (true)
             {
-                string name = "";
-                for (; m < tripsData.Ids.Length;)
-                {
-                    for (int n = 0; n < tripsData.Names.Length; n++)
-                    {
-                        if (tripsData.Names[n].TryGetValue(tripsData.Ids[m], out name))
-                        {
-                            string Prices = TakingElement.tripDecrypter.
-                                Handle(new Numb(tripsData.Prices[tripsData.Ids[m]]), 3).Number;
-                            string Ratings = TakingElement.tripDecrypter.
-                                Handle(new Numb(tripsData.Ratings[tripsData.Ids[m]]), 3).Number;
-                            return new Trip(name, Prices,Ratings,
-                                tripsData.Countries[tripsData.Ids[m++]]);//Very Important!!!
-                        }
-                    }
+                foreach (Trip trip in tripsData)
+                {                   
+                    return trip;
                 }
-                m = 0;
             }
         }
 
@@ -116,39 +85,10 @@ namespace TravelAgencies.DataAccess
         {
             while (true)
             {
-                for (; i < photosData.Photos.Length; i++)
+                foreach (Photo photo in photosData)
                 {
-                    if (photosData.Photos[i] != null)
-                    {
-                        for (; j < photosData.Photos[i].Length; j++)
-                        {
-                            if (photosData.Photos[i][j] != null)
-                            {
-                                for (; k < photosData.Photos[i][j].Length; k++)
-                                {
-                                    if (photosData.Photos[i][j][k] != null)
-                                    {
-                                        string WidthPx = TakingElement.photoDecrypter.
-                                            Handle(new Numb(photosData.Photos[i][j][k].WidthPx), 2).Number;
-                                        string HeightPx = TakingElement.photoDecrypter.
-                                            Handle(new Numb(photosData.Photos[i][j][k].HeightPx), 2).Number;
-                                        if (double.Parse(WidthPx) == 0.0 || double.Parse(HeightPx) == 0.0) continue;
-                                        return new Photo(photosData.Photos[i][j][k].Name,
-                                            photosData.Photos[i][j][k].Camera,
-                                            photosData.Photos[i][j][k].CameraSettings,
-                                            photosData.Photos[i][j][k].Date,
-                                            WidthPx, HeightPx,
-                                            photosData.Photos[i][j][k].Longitude,
-                                            photosData.Photos[i][j][k++].Latitude);//Very Important!!!!
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    return photo;
                 }
-                i = 0;
-                j = 0;
-                k = 0;
             }
         }
 
@@ -156,24 +96,10 @@ namespace TravelAgencies.DataAccess
         {
             while (true)
             {
-                while (node != null || stack.Count > 0)
+                foreach (RevieW review in reviewData)
                 {
-                    while (node != null)
-                    {
-                        stack.Push(node);
-                        string Review = node.Review;
-                        string UserName = node.UserName;
-                        node = node.Left;
-                        return new RevieW(Review, UserName);
-                    }
-                    if (stack.Count > 0)
-                    {
-                        node = stack.Pop();
-                        node = node.Right;
-                    }
+                    return review;
                 }
-                stack.Clear();
-                node = reviewData.Reviews;
             }
         }
 
@@ -181,34 +107,10 @@ namespace TravelAgencies.DataAccess
         {
             while (true)
             {
-                if (c == 0) isGenerated = false;
-                for (; c < accomodationData.Rooms.Length; c++)
+                foreach (Booking booking in accomodationData)
                 {
-                    nodeB = accomodationData.Rooms[c];
-
-                    for (int o = 0; o < r; o++)
-                    {
-                        if (nodeB != null)
-                            nodeB = nodeB.Next;
-                        else
-                            break;
-                    }
-                    if (nodeB != null)
-                    {
-                        c++;
-                        string name = nodeB.Name;
-                        string rating = nodeB.Rating;
-                        string price = nodeB.Price;
-                        isGenerated = true;
-                        rating = TakingElement.bookDecrypter.Handle(new Numb(rating), 1).Number;
-                        price = TakingElement.bookDecrypter.Handle(new Numb(price), 1).Number;
-                        return new Booking(name, rating, price);
-                    }
+                    return booking;
                 }
-                c = 0;
-                if (isGenerated)
-                    r++;
-                else r = 0;
             }
         }
     }

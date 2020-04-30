@@ -22,8 +22,7 @@ namespace TravelAgencies.Agencies
 
     class FactoryPL : AgencyFactory
     {
-        public FactoryPL(TakingElement taker) : base(taker)
-        { }
+        public FactoryPL(TakingElement taker) : base(taker) { }
 
         public override IPhoto CreatePhoto()
         {
@@ -48,8 +47,7 @@ namespace TravelAgencies.Agencies
 
     class FactoryIT : AgencyFactory
     {
-        public FactoryIT(TakingElement taker) : base(taker)
-        { }
+        public FactoryIT(TakingElement taker) : base(taker) { }
 
         public override IPhoto CreatePhoto()
         {
@@ -74,8 +72,7 @@ namespace TravelAgencies.Agencies
 
     class FactoryFR : AgencyFactory
     {
-        public FactoryFR(TakingElement taker) : base(taker)
-        { }
+        public FactoryFR(TakingElement taker) : base(taker) { }
 
         public override IPhoto CreatePhoto()
         {

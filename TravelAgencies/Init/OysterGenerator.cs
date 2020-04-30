@@ -29,7 +29,6 @@ namespace TravelAgencies.Init
                 if (goLeft) prev.Left = node;
                 else prev.Right = node;
             }
-
             return result;
         }
 

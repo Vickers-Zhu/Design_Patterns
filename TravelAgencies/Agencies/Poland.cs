@@ -42,7 +42,7 @@ namespace TravelAgencies.Agencies
             }
         }
 
-        public PhotoPL(Photo photo )
+        public PhotoPL(Photo photo)
         {
             this.photo = photo;
         }

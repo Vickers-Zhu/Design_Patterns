@@ -39,6 +39,7 @@ namespace TravelAgencies
             Agency pl = new AgencyPL(new FactoryPL(taker), new Random(rd.Next(1, 10086)));
             Agency fr = new AgencyFR(new FactoryFR(taker), new Random(rd.Next(1, 10086)));
             Agency it = new AgencyIT(new FactoryIT(taker), new Random(rd.Next(1, 10086)));
+
             OfferWebsite offerWebsite = new OfferWebsite(WebsiteTemporaryOfferCount, WebsitePermanentOfferCount);
             offerWebsite.AddAgc(pl);
             offerWebsite.AddAgc(fr);
@@ -63,6 +64,7 @@ namespace TravelAgencies
 
                 if (HandleInput()) break;
             }
+
             Console.ReadLine();
 		}
 		bool HandleInput()
