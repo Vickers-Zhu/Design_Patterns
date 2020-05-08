@@ -1,4 +1,7 @@
-﻿using System;
+﻿//I certify that this assignment is entirely my own work, \
+//performed independently and without any help from the sources which are not allowed.
+//Jiyi Zhu
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -64,7 +67,6 @@ namespace TravelAgencies
 
                 if (HandleInput()) break;
             }
-
             Console.ReadLine();
 		}
 		bool HandleInput()
