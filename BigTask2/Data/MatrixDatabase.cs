@@ -45,7 +45,7 @@ namespace BigTask2.Data
 			routes[cityIds[from]][cityIds[to]] = new Route { From = from, To = to, Cost = cost, TravelTime = travelTime, VehicleType = vehicle };
 		}
 
-		public void /* */ GetRoutesFrom(City from)
+		public IEnumerable<Route> GetRoutesFrom(City from)
 		{
 			/*
 			* Fill this fragment and return Type.

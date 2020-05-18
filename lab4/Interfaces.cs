@@ -2,7 +2,6 @@
 
 using BigTask2.Api;
 using System.Collections.Generic;
-using BigTask2.Algorithms;
 
 namespace BigTask2.Ui
 {
@@ -23,6 +22,5 @@ namespace BigTask2.Ui
     {
         IForm Form { get; }
         IDisplay Display { get; }
-        void Accept(ISolver solver);
     }
 }

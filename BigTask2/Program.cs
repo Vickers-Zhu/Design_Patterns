@@ -37,6 +37,9 @@ namespace BigTask2
 			 */
             //Execute(keyValueSystem, "key_value_input.txt");
             Console.WriteLine();
+
+            //Console.WriteLine(KeyKey("to=Gotham"));
+            Console.ReadKey();
         }
 
         /* Prepare method Create System here (add return, arguments and body)*/

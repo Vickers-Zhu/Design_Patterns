@@ -1,0 +1,7 @@
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\BigTask2\obj\Debug\BigTask2.csprojAssemblyReference.cache
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\BigTask2\obj\Debug\BigTask2.csproj.CoreCompileInputs.cache
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\BigTask2\bin\Debug\BigTask2.exe.config
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\BigTask2\bin\Debug\BigTask2.exe
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\BigTask2\bin\Debug\BigTask2.pdb
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\BigTask2\obj\Debug\BigTask2.exe
+C:\Users\VickersZhu\Documents\GitHub\Design_Patterns\BigTask2\obj\Debug\BigTask2.pdb

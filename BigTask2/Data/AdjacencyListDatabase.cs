@@ -42,7 +42,7 @@ namespace BigTask2.Data
 			routes[from].Add(new Route { From = from, To = to, Cost = cost, TravelTime = travelTime, VehicleType = vehicle});
 		}
 
-		public void /* */ GetRoutesFrom(City from)
+		public IEnumerable<Route> GetRoutesFrom(City from)
 		{
 			/*
 			 * Fill this fragment and return Type.
@@ -53,7 +53,8 @@ namespace BigTask2.Data
 
 		public City GetByName(string cityName)
 		{
-			return cityDictionary.GetValueOrDefault(cityName);
+            cityDictionary.TryGetValue(cityName, out City result);
+            return result;
 		}
 	}
 }

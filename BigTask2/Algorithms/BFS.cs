@@ -6,8 +6,8 @@ using System.Collections.Generic;
 
 namespace BigTask2.Algorithms
 {
-	public class BFS
-	{
+	public class BFS : ISolver
+    {
 		public IEnumerable<Route> Solve(IGraphDatabase graph, City from, City to)
 		{
 			Dictionary<City, Route> routes = new Dictionary<City, Route>();
@@ -17,12 +17,10 @@ namespace BigTask2.Algorithms
 			do
 			{
 				City city = queue.Dequeue();
-				/*
-				 * For each outgoing route from city...
-				 */
+				foreach(Route rt in graph.GetRoutesFrom(city))
 				{
-					Route route = null; /* Change to current Route*/
-					if (routes.ContainsKey(route.To))
+                    Route route = rt; /* Change to current Route*/
+                    if (routes.ContainsKey(route.To))
 					{
 						continue;
 					}
@@ -46,5 +44,5 @@ namespace BigTask2.Algorithms
 			result.Reverse();
 			return result;
 		}
-	}
+    }
 }
