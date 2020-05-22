@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces.cs" />
     <Compile Include="Problems\CompositeProblem.cs" />
     <Compile Include="Problems\CPUProblem.cs" />
     <Compile Include="Problems\GPUProblem.cs" />
